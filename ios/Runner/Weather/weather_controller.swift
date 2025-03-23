@@ -4,6 +4,11 @@ class WeatherController: NSObject {
     private var eventSink: FlutterEventSink?
     private var timer: Timer?
     
+    // these lines make WeatherControllr a Singleton class
+    // *** I FORGET TO ADD THESE LINES WHILE VIDEO RECORDING ***
+    static let shared = WeatherController()
+    override init(){}
+    
     
     // This function will send data to the flutter every 4 seconds
     func startSendingData(eventSink: @escaping FlutterEventSink){
